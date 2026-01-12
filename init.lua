@@ -13,3 +13,5 @@ vim.opt.clipboard = "unnamedplus"
 -- Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = "//"
+
+require('command-completion').setup()
