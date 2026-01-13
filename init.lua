@@ -1,4 +1,5 @@
 require("config.lazy")
+require("config.lsp")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
