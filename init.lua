@@ -28,5 +28,4 @@ vim.keymap.set("n", "<leader>p", function()
 end)
 
 require('command-completion').setup()
-require('palette').setup()
 -- require('lir').setup() -- *TODO - Configure lir.nvim with command palette
