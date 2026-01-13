@@ -1,16 +1,18 @@
-local fuzzy = require("palette.search.fuzzy")
-
 local M = {}
+
+local fuzzy = require("palette.search.fuzzy")
+local boost = require("palette.search.boost")
 
 function M.search(index, query)
   local results = {}
 
   for _, entry in ipairs(index) do
-    local score = fuzzy.score(query, entry.haystack)
-    if score then
+    local base = fuzzy.score(query, entry.haystack)
+    if base then
+      local final = boost.apply(entry.command, base)
       table.insert(results, {
         command = entry.command,
-        score = score,
+        score = final,
       })
     end
   end
@@ -21,5 +23,3 @@ function M.search(index, query)
 
   return results
 end
-
-return M
