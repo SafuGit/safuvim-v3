@@ -20,7 +20,7 @@ vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true })
 vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { noremap = true })
 
 -- Leader key
-vim.g.mapleader = " "
+vim.g.mapleader = "<Space>"
 vim.g.maplocalleader = "//"
 
 require('command-completion').setup()
