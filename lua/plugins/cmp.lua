@@ -1,13 +1,13 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "hrsh7th/cmp-buffer", -- buffer completion,
-    "hrsh7th/cmp-path", -- filesystem paths,
-    { "hrsh7th/cmp-nvim-lsp", event = { "BufReadPre", "BufNewFile" } },  -- lsp completions
+    "hrsh7th/cmp-buffer",                                               -- buffer completion,
+    "hrsh7th/cmp-path",                                                 -- filesystem paths,
+    { "hrsh7th/cmp-nvim-lsp", event = { "BufReadPre", "BufNewFile" } }, -- lsp completions
     "hrsh7th/cmp-nvim-lsp-signature-help",
-    "hrsh7th/cmp-nvim-lua", -- neovim lua api completions
-    "petertriho/cmp-git", -- git completions
-    "SergioRibera/cmp-dotenv", -- .env file completions
+    "hrsh7th/cmp-nvim-lua",                                             -- neovim lua api completions
+    "petertriho/cmp-git",                                               -- git completions
+    "SergioRibera/cmp-dotenv",                                          -- .env file completions
   },
   config = function()
     local cmp = require("cmp")
@@ -29,5 +29,13 @@ return {
         { name = "dotenv" },
       })
     })
+
+    cmp.event:on("menu_opened", function()
+      vim.b.copilot_suggestion_hidden = true
+    end)
+
+    cmp.event:on("menu_closed", function()
+      vim.b.copilot_suggestion_hidden = false
+    end)
   end
 }
