@@ -26,7 +26,7 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
 
-        -- *TODO - Setup Finder keybinds with built-in pickers with my custom command pallete
+        -- *TODO - Setup Finder keybinds with built-in pickers with my custom command palette
       }
     }
   },
@@ -43,5 +43,5 @@ return {
     end,
   }
 
-  -- *TODO - Configure search and replace in command pallete
+  -- *TODO - Configure search and replace in command palette
 }

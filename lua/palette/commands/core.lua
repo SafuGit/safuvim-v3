@@ -1,4 +1,4 @@
-local registry = require("pallete.registry")
+local registry = require("palette.registry")
 
 registry.register({
   id = "file.save",
