@@ -15,3 +15,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "//"
 
 require('command-completion').setup()
+Telescope = require('telescope')
+Telescope.setup()
+Telescope.load_extension('media_files')
+
+-- *TODO - Setup Telescope keybinds with built-in pickers with my custom idea
