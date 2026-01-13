@@ -1,5 +1,3 @@
-vim.lsp.enable("ts_ls")
-
 local severity = vim.diagnostic.severity
 
 vim.diagnostic.config({
