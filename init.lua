@@ -40,18 +40,18 @@ require('lir').setup({
     highlight_dirname = false
   },
   mappings = {
-    ['l']     = actions.edit,
+    ['E']     = actions.edit,
     ['<C-s>'] = actions.split,
-    ['<C-v>'] = actions.vsplit,
+    ['<Del>'] = actions.vsplit,
     ['<C-t>'] = actions.tabedit,
 
-    ['h']     = actions.up,
-    ['q']     = actions.quit,
+    ['<C-b>']     = actions.up,
+    ['<Esc>']     = actions.quit,
 
-    ['K']     = actions.mkdir,
+    ['F']     = actions.mkdir,
     ['N']     = actions.newfile,
     ['R']     = actions.rename,
-    ['@']     = actions.cd,
+    ['C']     = actions.cd,
     ['Y']     = actions.yank_path,
     ['.']     = actions.toggle_show_hidden,
     ['D']     = actions.delete,
@@ -60,9 +60,9 @@ require('lir').setup({
       mark_actions.toggle_mark()
       vim.cmd('normal! j')
     end,
-    ['C'] = clipboard_actions.copy,
-    ['X'] = clipboard_actions.cut,
-    ['P'] = clipboard_actions.paste,
+    ['<C-c>'] = clipboard_actions.copy,
+    ['<C-x>'] = clipboard_actions.cut,
+    ['<C-v>'] = clipboard_actions.paste,
   },
   float = {
     winblend = 0,
