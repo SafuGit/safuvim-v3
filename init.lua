@@ -1,9 +1,9 @@
-require("config.lazy")
-require("config.lsp")
-
 -- Leader key
 vim.g.mapleader = "<Space>"
 vim.g.maplocalleader = "//"
+
+require("config.lazy")
+require("config.lsp")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,9 +23,65 @@ vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true })
 vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { noremap = true })
 
-vim.keymap.set("n", "<leader>p", function()
-  require("palette.ui.palette").open()
+vim.keymap.set("n", "qf", function()
+  vim.cmd("Telescope commander")
 end)
 
+local actions = require'lir.actions'
+local mark_actions = require 'lir.mark.actions'
+local clipboard_actions = require'lir.clipboard.actions'
+
 require('command-completion').setup()
--- require('lir').setup() -- *TODO - Configure lir.nvim with command palette
+require('lir').setup({
+    show_hidden_files = false,
+  ignore = {}, -- { ".DS_Store", "node_modules" } etc.
+  devicons = {
+    enable = false,
+    highlight_dirname = false
+  },
+  mappings = {
+    ['l']     = actions.edit,
+    ['<C-s>'] = actions.split,
+    ['<C-v>'] = actions.vsplit,
+    ['<C-t>'] = actions.tabedit,
+
+    ['h']     = actions.up,
+    ['q']     = actions.quit,
+
+    ['K']     = actions.mkdir,
+    ['N']     = actions.newfile,
+    ['R']     = actions.rename,
+    ['@']     = actions.cd,
+    ['Y']     = actions.yank_path,
+    ['.']     = actions.toggle_show_hidden,
+    ['D']     = actions.delete,
+
+    ['J'] = function()
+      mark_actions.toggle_mark()
+      vim.cmd('normal! j')
+    end,
+    ['C'] = clipboard_actions.copy,
+    ['X'] = clipboard_actions.cut,
+    ['P'] = clipboard_actions.paste,
+  },
+  float = {
+    winblend = 0,
+    curdir_window = {
+      enable = false,
+      highlight_dirname = false
+    },
+  },
+  hide_cursor = true,
+})
+
+local commander = require("commander")
+
+commander.setup()
+
+commander.add({
+  {
+    desc = "Open File Explorer (LIR)",
+    cmd = "<CMD>lua require'lir.float'.toggle()<CR>",
+    keys = { "n", "<leader>e" },
+  }
+})

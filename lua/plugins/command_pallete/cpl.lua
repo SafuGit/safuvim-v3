@@ -1,16 +1,8 @@
 return {
-  {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- or if using mini.icons/mini.nvim
-    -- dependencies = { "nvim-mini/mini.icons" },
-    ---@module "fzf-lua"
-    ---@diagnostic disable-next-line: undefined-doc-name
-    ---@type fzf-lua.Config|{}
-    ---@diagnostic disable: missing-fields
-    opts = {}
-    ---@diagnostic enable: missing-fields
+  "FeiyouG/commander.nvim",
+  dependencies = { "nvim-telescope/telescope.nvim" },
+  keys = {
+    { "<leader>f",  "<CMD>Telescope commander<CR>", mode = "n" },
+    { "<leader>fc", "<CMD>Telescope commander<CR>", mode = "n" }
   },
-  { 'MunifTanjim/nui.nvim' },
 }
