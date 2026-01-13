@@ -7,6 +7,7 @@
   "lir.nvim": { "branch": "master", "commit": "5b1a927cfee45845d7d4450a1e8f2f63cf0baaac" },
   "lua-tiktoken": { "branch": "main", "commit": "3e41b7c5f0375fcaae5a2ceadb7e1d41166ccaec" },
   "luma-nvim": { "branch": "main", "commit": "82543d790405777b15dbb1817ba09b23ea78d1ed" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "fe661093f4b05136437b531e7f959af2a2ae66c8" },
   "mason.nvim": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "81e676d3203c9eb6e4c0ccf1eba1679296ef923f" },
   "nvim-lspconfig": { "branch": "master", "commit": "92ee7d42320edfbb81f3cad851314ab197fa324a" },
