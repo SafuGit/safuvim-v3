@@ -15,3 +15,4 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "//"
 
 require('command-completion').setup()
+require('lir').setup() -- *TODO - Configure lir.nvim with command pallete

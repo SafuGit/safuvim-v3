@@ -29,5 +29,10 @@ return {
         -- *TODO - Setup Finder keybinds with built-in pickers with my custom command pallete
       }
     }
+  },
+
+  {
+    'tamago324/lir.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
   }
 }
