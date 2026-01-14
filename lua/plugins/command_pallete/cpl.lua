@@ -60,6 +60,12 @@ return {
           cmd = function()
             vim.cmd("LuxtermToggle")
           end
+        },
+        {
+          name = "Go Back to Snacks Dashboard",
+          cmd = function ()
+            vim.cmd("lua Snacks.dashboard()")
+          end
         }
       },
 
