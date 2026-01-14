@@ -17,21 +17,6 @@ return {
   -- }
 
   {
-    "folke/snacks.nvim",
-    ---@diagnostic disable-next-line: undefined-doc-name
-    ---@type snacks.Config
-    opts = {
-      picker = {
-        -- your picker configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-
-        -- *TODO - Setup Finder keybinds with built-in pickers with my custom command palette
-      }
-    }
-  },
-
-  {
     'tamago324/lir.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
   },

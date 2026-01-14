@@ -175,3 +175,8 @@ require('lualine').setup {
 vim.keymap.set('n', '<leader>fb', function()
   require('arena').toggle()
 end)
+
+vim.o.shell = "pwsh"
+vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.o.shellquote = ""
+vim.o.shellxquote = ""
