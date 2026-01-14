@@ -87,6 +87,11 @@ return {
           cmd = function ()
             vim.cmd("LspInfo")
           end
+        },
+        {
+          name = "Format Document",
+          category = "Coding",
+          cmd = function () vim.lsp.buf.format({ async = true }) end
         }
       },
 

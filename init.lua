@@ -36,14 +36,14 @@ local clipboard_actions = require 'lir.clipboard.actions'
 
 require('command-completion').setup()
 require('lir').setup({
-  show_hidden_files = false,
+  show_hidden_files = true,
   ignore = {}, -- { ".DS_Store", "node_modules" } etc.
   devicons = {
     enable = false,
     highlight_dirname = false
   },
   mappings = {
-    ['<CR>']     = actions.edit,
+    ['<CR>']  = actions.edit,
     ['<C-s>'] = actions.split,
     ['<Del>'] = actions.vsplit,
     ['<C-t>'] = actions.tabedit,
@@ -184,4 +184,41 @@ vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
 
-vim.keymap.set({'n', 'i'}, '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'i' }, '<C-s>', ':w<CR>', { noremap = true, silent = true })
+
+local ok, secrets = pcall(require, "env.token")
+if ok and secrets.COPILOT_TOKEN then
+  vim.env.COPILOT_TOKEN = secrets.COPILOT_TOKEN
+  vim.notify(
+    "COPILOT_TOKEN loaded from env/token.lua",
+    vim.log.levels.INFO
+  )
+else
+  vim.notify(
+    "env/token.lua not found or COPILOT_TOKEN missing",
+    vim.log.levels.WARN
+  )
+end
+
+local function check_copilot_token()
+  local copilot_token = vim.env.COPILOT_TOKEN or os.getenv("COPILOT_TOKEN")
+  if not copilot_token or copilot_token == "" then
+    vim.notify(
+      "COPILOT_TOKEN not set; ai_commit_msg copilot provider will not work",
+      vim.log.levels.WARN
+    )
+  else
+    vim.notify(
+      "COPILOT_TOKEN found; ai_commit_msg copilot provider enabled",
+      vim.log.levels.INFO
+    )
+  end
+end
+
+vim.api.nvim_create_user_command(
+  "CheckCopilotToken",
+  check_copilot_token,
+  {}
+)
+
+-- vim.cmd([[autocmd FileType gitcommit lua require("ai_commit_msg").generate() ]])

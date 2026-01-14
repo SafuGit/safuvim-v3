@@ -35,4 +35,14 @@ return {
       -- See Configuration section for options
     },
   },
+  {
+    "aweis89/ai-commit-msg.nvim",
+    ft = "gitcommit",
+    event = "BufReadPre",
+    config = true,
+    opts = {
+      enabled = true,
+      provider = "copilot",
+    },
+  }
 }
