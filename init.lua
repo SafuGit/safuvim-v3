@@ -1,6 +1,6 @@
 -- Leader key
 vim.g.mapleader = "<Space>"
-vim.g.maplocalleader = "//"
+vim.g.maplocalleader = "/"
 
 require("config.lazy")
 require("config.lsp")
@@ -26,9 +26,7 @@ vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true })
 vim.keymap.set("c", "<C-a>", "ggVG", { noremap = true })
 vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { noremap = true })
 
-vim.keymap.set("n", "qf", function()
-  vim.cmd("Telescope commander")
-end)
+vim.keymap.set("n", "qf", "<cmd>Telescope commander<CR>")
 
 local actions = require 'lir.actions'
 local mark_actions = require 'lir.mark.actions'

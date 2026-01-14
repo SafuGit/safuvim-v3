@@ -27,6 +27,7 @@ return {
         { name = "nvim_lua" },
         { name = "git" },
         { name = "dotenv" },
+        { name = "lazydev" }
       }),
       formatting = {
         format = function(entry, vim_item)

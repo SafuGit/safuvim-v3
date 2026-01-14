@@ -92,6 +92,20 @@ return {
           name = "Format Document",
           category = "Coding",
           cmd = function () vim.lsp.buf.format({ async = true }) end
+        },
+        {
+          name = "Search and Replace",
+          category = "Coding",
+          cmd = function ()
+            vim.cmd("GrugFar")
+          end
+        },
+        {
+          name = "Search and Replace within Visual Selection",
+          category = "Coding",
+          cmd = function ()
+            vim.cmd("GrugFarWithin")
+          end
         }
       },
 

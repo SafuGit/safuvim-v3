@@ -38,7 +38,7 @@ return {
   {
     "aweis89/ai-commit-msg.nvim",
     ft = "gitcommit",
-    event = "BufReadPre",
+    event = "VimEnter",
     config = true,
     opts = {
       enabled = true,

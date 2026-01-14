@@ -10,6 +10,11 @@ return {
 
       -- *TODO - Setup Finder keybinds with built-in pickers with my custom command palette
     },
+    animate = { enabled = true },
+    bigfile = { enabled = true },
+    input = { enabled = true },
+    notifier = { enabled = true },
+    scroll = { enabled = true },
     dashboard = {
       width = 45,
       row = nil,                                                                   -- dashboard position. nil for center
