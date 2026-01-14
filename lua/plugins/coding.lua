@@ -10,7 +10,7 @@ return {
     },
   },
   {
-    "xzbdmw/colorful-menu.nvim", -- *TODO - Configure colorful-menu.nvim with nvim-cmp
+    "xzbdmw/colorful-menu.nvim",
   },
   {
     'sontungexpt/better-diagnostic-virtual-text',
