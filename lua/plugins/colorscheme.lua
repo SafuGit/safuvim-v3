@@ -19,7 +19,7 @@ return {
     config = function()
       require("luma").setup({
         theme = "dark",         -- "dark" or "light" theme
-        contrast = "high"     -- "low", "medium" or "high" contrast
+        contrast = "medium"     -- "low", "medium" or "high" contrast
       })
 
       -- Activate the theme

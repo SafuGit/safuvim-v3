@@ -18,9 +18,12 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("i", "<C-v>", "<C-r>+", { noremap = true })
 vim.keymap.set("n", "<C-v>", '"+p', { noremap = true })
 vim.keymap.set("v", "<C-v>", '"+p', { noremap = true })
+vim.keymap.set("c", "<C-v>", "<C-r>+", { noremap = true })
+vim.keymap.set("c", "<C-S-v>", "<C-r>+", { noremap = true })
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
 
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true })
+vim.keymap.set("c", "<C-a>", "ggVG", { noremap = true })
 vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { noremap = true })
 
 vim.keymap.set("n", "qf", function()
@@ -40,7 +43,7 @@ require('lir').setup({
     highlight_dirname = false
   },
   mappings = {
-    ['E']     = actions.edit,
+    ['<CR>']     = actions.edit,
     ['<C-s>'] = actions.split,
     ['<Del>'] = actions.vsplit,
     ['<C-t>'] = actions.tabedit,
@@ -168,3 +171,7 @@ require('lualine').setup {
     lualine_z = {},
   },
 }
+
+vim.keymap.set('n', '<leader>fb', function()
+  require('arena').toggle()
+end)

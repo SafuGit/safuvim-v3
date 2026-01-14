@@ -18,6 +18,13 @@ return {
           cmd = function ()
             vim.cmd("Project")
           end
+        },
+        {
+          name = "Open Arena Buffers",
+          category = "Buffers",
+          cmd = function ()
+            require("arena").toggle()
+          end
         }
       },
 
