@@ -53,6 +53,13 @@ return {
           cmd = function()
             require("octo.utils").create_base_search_command { include_current_repo = true }
           end
+        },
+        {
+          name = "Manage Terminal Sessions",
+          category = "Terminal",
+          cmd = function()
+            vim.cmd("LuxtermToggle")
+          end
         }
       },
 
