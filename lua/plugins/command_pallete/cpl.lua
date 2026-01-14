@@ -15,15 +15,43 @@ return {
         {
           name = "View Projects Palette",
           category = "Files",
-          cmd = function ()
+          cmd = function()
             vim.cmd("Project")
           end
         },
         {
           name = "Open Arena Buffers",
           category = "Buffers",
-          cmd = function ()
+          cmd = function()
             require("arena").toggle()
+          end
+        },
+        {
+          name = "Open Git UI",
+          category = "Git",
+          cmd = function()
+            vim.cmd("Neogit")
+          end
+        },
+        {
+          name = "Github Issues List",
+          category = "Git",
+          cmd = function()
+            vim.cmd("Octo issue list")
+          end
+        },
+        {
+          name = "Github Pull Requests List",
+          category = "Git",
+          cmd = function()
+            vim.cmd("Octo pr list")
+          end
+        },
+        {
+          name = "Search Github",
+          category = "Git",
+          cmd = function()
+            require("octo.utils").create_base_search_command { include_current_repo = true }
           end
         }
       },

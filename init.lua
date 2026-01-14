@@ -77,9 +77,12 @@ require('lir').setup({
   hide_cursor = true,
 })
 
-local cmd_palette = require("command-palette")
+local function open_cmd_palette()
+  require('command-palette').run_cmd.ui()
+end
 
-vim.keymap.set('n', 'qf', cmd_palette.run_cmd.ui)
+vim.keymap.set('n', 'qf', open_cmd_palette, { noremap = true, silent = true })
+vim.api.nvim_create_user_command('CmdPalette', open_cmd_palette, {})
 
 local devicons = require 'nvim-web-devicons'
 require('incline').setup {
