@@ -27,13 +27,13 @@ vim.keymap.set("n", "qf", function()
   vim.cmd("Telescope commander")
 end)
 
-local actions = require'lir.actions'
+local actions = require 'lir.actions'
 local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require'lir.clipboard.actions'
+local clipboard_actions = require 'lir.clipboard.actions'
 
 require('command-completion').setup()
 require('lir').setup({
-    show_hidden_files = false,
+  show_hidden_files = false,
   ignore = {}, -- { ".DS_Store", "node_modules" } etc.
   devicons = {
     enable = false,
@@ -45,8 +45,8 @@ require('lir').setup({
     ['<Del>'] = actions.vsplit,
     ['<C-t>'] = actions.tabedit,
 
-    ['<C-b>']     = actions.up,
-    ['<Esc>']     = actions.quit,
+    ['<C-b>'] = actions.up,
+    ['<Esc>'] = actions.quit,
 
     ['F']     = actions.mkdir,
     ['N']     = actions.newfile,
@@ -56,7 +56,7 @@ require('lir').setup({
     ['.']     = actions.toggle_show_hidden,
     ['D']     = actions.delete,
 
-    ['J'] = function()
+    ['J']     = function()
       mark_actions.toggle_mark()
       vim.cmd('normal! j')
     end,
@@ -74,14 +74,6 @@ require('lir').setup({
   hide_cursor = true,
 })
 
-local commander = require("commander")
+local cmd_palette = require("command-palette")
 
-commander.setup()
-
-commander.add({
-  {
-    desc = "Open File Explorer (LIR)",
-    cmd = "<CMD>lua require'lir.float'.toggle()<CR>",
-    keys = { "n", "<leader>e" },
-  }
-})
+vim.keymap.set('n', 'qf', cmd_palette.run_cmd.ui)
