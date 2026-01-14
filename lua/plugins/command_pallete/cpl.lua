@@ -106,6 +106,48 @@ return {
           cmd = function ()
             vim.cmd("GrugFarWithin")
           end
+        },
+        {
+          name = "Chat with Copilot",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChat")
+          end
+        },
+        {
+          name = "Explain Code with Copilot",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChatExplain")
+          end
+        },
+        {
+          name = "Review Code with Copilot",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChatReview")
+          end
+        },
+        {
+          name = "Fix Code Issues with Copilot",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChatFix")
+          end
+        },
+        {
+          name = "Optimize code with Copilot",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChatOptimize")
+          end
+        },
+        {
+          name = "Select Copilot Models",
+          category = "Copilot",
+          cmd = function ()
+            vim.cmd("CopilotChatModels")
+          end
         }
       },
 
