@@ -21,7 +21,26 @@ return {
             dismiss = "<Esc>",
           },
         },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          accept = false,
+        },
+        panel = {
+          enabled = false,
+        },
+        filetypes = {
+          ["*"] = true,
+        },
       })
+
+      vim.keymap.set("i", "<S-Tab>", function ()
+        if (require("copilot.suggestion").is_visible()) then
+          return require("copilot.suggestion").accept()
+        else
+          return vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n", false)
+        end
+      end)
     end,
   },
   {
