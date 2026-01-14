@@ -183,3 +183,5 @@ vim.o.shell = "pwsh"
 vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
+
+vim.keymap.set({'n', 'i'}, '<C-s>', ':w<CR>', { noremap = true, silent = true })
