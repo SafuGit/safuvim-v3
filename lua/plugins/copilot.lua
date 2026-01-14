@@ -34,7 +34,7 @@ return {
         },
       })
 
-      vim.keymap.set("i", "<S-Tab>", function ()
+      vim.keymap.set("i", "<S-Tab>", function()
         if (require("copilot.suggestion").is_visible()) then
           return require("copilot.suggestion").accept()
         else
@@ -43,17 +43,17 @@ return {
       end)
     end,
   },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim", branch = "master" },
-      { "gptlang/lua-tiktoken",  branch = "main" }
-    },
-    build = "make tiktoken",
-    opts = {
-      -- See Configuration section for options
-    },
-  },
+  -- {
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   dependencies = {
+  --     { "nvim-lua/plenary.nvim", branch = "master" },
+  --     { "gptlang/lua-tiktoken",  branch = "main" }
+  --   },
+  --   build = "make tiktoken",
+  --   opts = {
+  --     -- See Configuration section for options
+  --   },
+  -- },
   {
     "aweis89/ai-commit-msg.nvim",
     ft = "gitcommit",
@@ -63,5 +63,5 @@ return {
       enabled = true,
       provider = "copilot",
     },
-  }
+  },
 }
