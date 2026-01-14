@@ -37,6 +37,7 @@ return {
   },
 
   {
+    -- *! YOU NEED sad AND fd FOR THIS!
     "mahyarmirrashed/search-and-replace.nvim",
     config = function()
       require("search-and-replace").setup()
