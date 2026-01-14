@@ -1,9 +1,9 @@
 {
   "CopilotChat.nvim": { "branch": "main", "commit": "21bdecb25aa72119d11d7fc08c7e0ce323f1b540" },
   "arena.nvim": { "branch": "main", "commit": "e7a2886683a5f3e6acb3dd359607e198f3fb26a0" },
+  "auto-session": { "branch": "main", "commit": "292492ab7af4bd8b9e37e28508bc8ce995722fd5" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "better-diagnostic-virtual-text": { "branch": "main", "commit": "eb3a77e714aa6c295bdb4f074fccbda637090f6e" },
-  "cd-project.nvim": { "branch": "main", "commit": "4626db371f8ab4f2eb8fc95d33f62ef0b1fb66e4" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-dotenv": { "branch": "main", "commit": "4dd53aab60982f1f75848aec5e6214986263325e" },
   "cmp-git": { "branch": "main", "commit": "b24309c386c9666c549a1abaedd4956541676d06" },

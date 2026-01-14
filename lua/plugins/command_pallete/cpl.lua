@@ -66,6 +66,27 @@ return {
           cmd = function ()
             vim.cmd("lua Snacks.dashboard()")
           end
+        },
+        {
+          name = "Lazy Plugins",
+          category = "Plugins & LSP",
+          cmd = function ()
+            vim.cmd("Lazy")
+          end
+        },
+        {
+          name = "Mason LSP",
+          category = "Plugins & LSP",
+          cmd = function ()
+            vim.cmd("Mason")
+          end
+        },
+        {
+          name = "Active LSP Info",
+          category = "Plugins & LSP",
+          cmd = function ()
+            vim.cmd("LspInfo")
+          end
         }
       },
 
