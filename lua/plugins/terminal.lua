@@ -9,7 +9,7 @@ return {
         preview_enabled = true,
         auto_hide = true,
         keymaps = {
-          toggle_manager = "<C-/>",
+          toggle_manager = "<C-t>",
         }
       })
     end

@@ -27,5 +27,17 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
+  },
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  },
+  {
+    'm4xshen/autoclose.nvim',
+    config = function()
+      require('autoclose').setup()
+    end
   }
 }

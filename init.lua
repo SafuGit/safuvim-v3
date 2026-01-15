@@ -1,5 +1,5 @@
 -- Leader key
-vim.g.mapleader = "<Space>"
+vim.g.mapleader = " "
 vim.g.maplocalleader = "/"
 
 require("config.lazy")
@@ -220,3 +220,13 @@ vim.api.nvim_create_user_command(
 )
 
 -- vim.cmd([[autocmd FileType gitcommit lua require("ai_commit_msg").generate() ]])
+vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<C-/>', function()
+  require('Comment.api').toggle.linewise.current()
+end, { noremap = true, silent = true })
+
+-- Visual mode: toggle comment for selection
+vim.keymap.set('v', '<C-/>', function()
+  require('Comment.api').toggle.linewise(vim.fn.visualmode())
+end, { noremap = true, silent = true })
