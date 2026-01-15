@@ -4,8 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "ts_ls",
-        "lua_ls",
-        "prettier"
+        "lua_ls"
       }
     },
     dependencies = {

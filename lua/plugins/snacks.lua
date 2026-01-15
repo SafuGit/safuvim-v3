@@ -7,8 +7,6 @@ return {
       -- your picker configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-
-      -- *TODO - Setup Finder keybinds with built-in pickers with my custom command palette
     },
     animate = { enabled = true },
     bigfile = { enabled = true },
@@ -30,7 +28,8 @@ return {
         keys = {
           { icon = " ", key = "p", desc = "Command Pallete", action = ":CmdPalette" },
           { icon = " ", key = "o", desc = "Open Recent Project", action = ":lua Snacks.dashboard.pick('projects')" },
-          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "n", desc = "Add New Project", action = ":ProjectAdd" },
+          { icon = " ", key = "f", desc = "Pick Project", action = ":ProjectFzf" },
           { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
