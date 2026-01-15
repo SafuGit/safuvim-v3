@@ -173,7 +173,7 @@ require('lualine').setup {
   },
 }
 
-vim.keymap.set('n', '<leader>fb', function()
+vim.keymap.set('n', '<leader>bb', function()
   require('arena').toggle()
 end)
 
@@ -230,3 +230,6 @@ end, { noremap = true, silent = true })
 vim.keymap.set('v', '<C-/>', function()
   require('Comment.api').toggle.linewise(vim.fn.visualmode())
 end, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fb', function ()
+  require("lir.float").toggle()
+end)
