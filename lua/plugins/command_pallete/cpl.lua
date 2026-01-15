@@ -107,6 +107,13 @@ return {
             vim.cmd("GrugFarWithin")
           end
         },
+        {
+          name = "Select Theme",
+          category = "Colorscheme",
+          cmd = function ()
+            vim.cmd("Themery")
+          end
+        }
       },
 
       icons = {

@@ -1,7 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
+    opts = {}
   },
   {
     "catgoose/nvim-colorizer.lua",
